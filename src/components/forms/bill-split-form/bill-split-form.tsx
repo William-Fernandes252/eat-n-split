@@ -218,7 +218,16 @@ export default function BillSplitForm({
 		<Drawer open={!!friend} onClose={cancel}>
 			<DrawerContent>
 				<ScrollArea className="mx-auto w-full max-w-sm h-96">
-					<DrawerHeader>
+					<DrawerHeader className="relative">
+						<FriendOptionsMenu friend={friend}>
+							<Button
+								size="icon"
+								className="absolute top-2 right-2 rounded-full border-none"
+								variant="outline"
+							>
+								<EllipsisVertical />
+							</Button>
+						</FriendOptionsMenu>
 						<DrawerTitle>{title}</DrawerTitle>
 						<DrawerDescription>{title}</DrawerDescription>
 					</DrawerHeader>
