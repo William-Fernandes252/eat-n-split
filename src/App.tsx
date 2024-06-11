@@ -19,7 +19,10 @@ function App() {
 					<ScrollArea className="overflow-y-auto px-3 pb-2 border rounded-md">
 						<FriendList />
 					</ScrollArea>
-					<Button onClick={() => setIsAddFormOpen(true)}>
+					<Button
+						onClick={() => setIsAddFormOpen(true)}
+						data-test="add-friend-button"
+					>
 						Add Friend <PlusIcon size="1rem" className="ml-1" />
 					</Button>
 				</div>

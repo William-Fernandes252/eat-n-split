@@ -77,6 +77,15 @@ export default function DinamicDialog({
 	action,
 }: DinamicDialogProps) {
 	const isLargeScreen = useMediaQuery({ query: "(min-width: 1024px)" });
+	const cancelButton = (
+		<Button
+			variant="outline"
+			onClick={() => onClose?.()}
+			data-test="cancel-action-button"
+		>
+			Cancel
+		</Button>
+	);
 	return isLargeScreen ? (
 		<Dialog open={open} onOpenChange={(open) => !open && onClose?.()}>
 			<DialogTrigger asChild>{children}</DialogTrigger>
@@ -88,9 +97,7 @@ export default function DinamicDialog({
 				{content}
 				<DialogFooter>
 					<DialogClose asChild>{action}</DialogClose>
-					<DialogClose asChild>
-						<Button variant="outline">Cancel</Button>
-					</DialogClose>
+					<DialogClose asChild>{cancelButton}</DialogClose>
 				</DialogFooter>
 			</DialogContent>
 		</Dialog>
@@ -106,9 +113,7 @@ export default function DinamicDialog({
 					{content}
 					<DrawerFooter>
 						<DrawerClose asChild>{action}</DrawerClose>
-						<DrawerClose asChild>
-							<Button variant="outline">Cancel</Button>
-						</DrawerClose>
+						<DrawerClose asChild>{cancelButton}</DrawerClose>
 					</DrawerFooter>
 				</div>
 			</DrawerContent>

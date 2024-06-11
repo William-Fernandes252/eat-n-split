@@ -30,6 +30,7 @@ export default function FriendItem({ friend }: FriendItemProps) {
 			)}
 			onKeyUp={toggle}
 			onClick={toggle}
+			data-test="friend-item"
 		>
 			<Avatar className="m-1">
 				<AvatarImage src={friend.avatar} />

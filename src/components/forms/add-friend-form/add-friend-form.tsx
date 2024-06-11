@@ -65,7 +65,11 @@ export default function AddFriendForm({ open, onClose }: AddFriendFormProps) {
 						<FormItem>
 							<FormLabel>Name</FormLabel>
 							<FormControl>
-								<Input placeholder="Hilary Hahn" {...field} />
+								<Input
+									placeholder="Hilary Hahn"
+									data-test="friend-name-input"
+									{...field}
+								/>
 							</FormControl>
 							<FormDescription>Enter the name of your friend.</FormDescription>
 							<FormMessage />
@@ -81,6 +85,7 @@ export default function AddFriendForm({ open, onClose }: AddFriendFormProps) {
 							<FormControl>
 								<Input
 									placeholder="https://example.com/avatar.jpg"
+									data-test="friend-avatar-input"
 									{...field}
 								/>
 							</FormControl>
@@ -102,7 +107,11 @@ export default function AddFriendForm({ open, onClose }: AddFriendFormProps) {
 			title={title}
 			description={description}
 			action={
-				<Button type="submit" form="add-friend-form">
+				<Button
+					type="submit"
+					form="add-friend-form"
+					data-test="add-friend-submit"
+				>
 					Add friend
 				</Button>
 			}
