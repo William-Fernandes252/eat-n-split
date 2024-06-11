@@ -24,6 +24,7 @@ export default function DeleteFriendDialog({
 					variant="destructive"
 					onClick={() => {
 						remove(friend.id);
+						onClose?.();
 						select(null);
 					}}
 				>

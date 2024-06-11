@@ -96,7 +96,7 @@ export default function DinamicDialog({
 				</DialogHeader>
 				{content}
 				<DialogFooter>
-					<DialogClose asChild>{action}</DialogClose>
+					{action}
 					<DialogClose asChild>{cancelButton}</DialogClose>
 				</DialogFooter>
 			</DialogContent>
@@ -112,7 +112,7 @@ export default function DinamicDialog({
 					</DrawerHeader>
 					{content}
 					<DrawerFooter>
-						<DrawerClose asChild>{action}</DrawerClose>
+						{action}
 						<DrawerClose asChild>{cancelButton}</DrawerClose>
 					</DrawerFooter>
 				</div>
