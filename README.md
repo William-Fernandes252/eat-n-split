@@ -8,7 +8,7 @@ Split the bill for outings with your friends.
 
 This is one of the projects that I developed during my enrollment in the Jonas Schmedtmann's [React course](https://www.udemy.com/course/the-ultimate-react-course/). As custom features, I added:
 
-- friends persistence using the Context API, custom hooks and browser local storage
+- friends persistence using the Context API, custom hooks and browser local storage;
 - custom styling using [Tailwind CSS](https://tailwindcss.com/) and [Shadcn](https://ui.shadcn.com/);
 - dark mode;
 - forms validation using [React Hook Form](https://www.react-hook-form.com/);
