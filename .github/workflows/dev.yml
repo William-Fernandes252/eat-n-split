@@ -43,23 +43,32 @@ jobs:
     container:
       image: cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
       options: --user 1001
+    strategy:
+      fail-fast: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup packages
         uses: pnpm/action-setup@v3
         with:
           version: 8
           run_install: false
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
           build: pnpm build
           start: pnpx vite --host
           browser: chrome
-          record: false
+          record: true
+          parallel: true
           wait-on: 'http://localhost:5173'
           wait-on-timeout: 60
           tag: ${{ github.sha }}
           spec: 'cypress/e2e/**/*.spec.js'
           install-command: pnpm install
+
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
