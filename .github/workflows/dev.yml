@@ -55,7 +55,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           build: pnpm build
-          start: pnpm dev
+          start: pnpx vite --host
           browser: chrome
           record: true
           wait-on: 'http://localhost:5173'
