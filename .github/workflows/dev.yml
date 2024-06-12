@@ -60,7 +60,6 @@ jobs:
           record: false
           wait-on: 'http://localhost:5173'
           wait-on-timeout: 60
-          parallel: true
           tag: ${{ github.sha }}
           spec: 'cypress/e2e/**/*.spec.js'
           install-command: pnpm install
